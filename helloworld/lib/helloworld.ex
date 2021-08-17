@@ -3,6 +3,7 @@ defmodule Helloworld do
   Sniffi pagliaccio 2
   """
 
+  @spec buildQueue :: boolean
   @doc """
   Hello world.
 

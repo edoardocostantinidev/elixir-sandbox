@@ -1,9 +1,9 @@
-defmodule Helloworld.MixProject do
+defmodule Webhook.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :helloworld,
+      app: :webhook,
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
@@ -15,16 +15,16 @@ defmodule Helloworld.MixProject do
   def application do
     [
       extra_applications: [:logger, :plug_cowboy],
-      mod: {Helloworld.Application, []}
+      mod: {Webhook.Application, []}
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:priority_queue, "~> 1.0.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:jason, "~> 1.2.2"},
+      {:parent, "~> 0.12.0"}
     ]
   end
 end
